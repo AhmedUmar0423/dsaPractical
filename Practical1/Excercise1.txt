@@ -1,0 +1,34 @@
+Navigation system can be considered as a two real-life example of algorithms. List two similar real-life examples.
+    Search engines (Google search)
+    Online Shopping platforms
+
+Write a sample algorithm for a navigation system.
+    Input : user location and destination location
+    Definiteness : Finding all possible routes to the destination
+    Definitiness : Calculating the most efficent route based on traffic conditions
+    Output : all the possible routes with the most efficent route highlighted
+    Output : showing the time to reach the destination based on the speed of travelling
+    Effectiveness : Re routing the route when alternative route taken or any other issue in route
+    Finiteness : Stop once the destination is reached
+
+
+Write an algorithm to find the maximum of three numbers.
+    Input : 3 numbers (a, b, c)
+    Finitness/ Effectivness / Definitness : compare, if a > b & a > c
+        Output : maximum number is a
+    Finitness/ Effectivness / Definitness : compare, if b > a & b > c
+        Output : maximum number is b
+    Finitness/ Effectivness / Definitness : compare, if c > a & c > b
+        Output : maximum number is c
+    end
+
+Write an algorithm to find the average of a list of N numbers.
+    Input : initialize sum = 0
+    start loop
+        Input : a number
+        Effectivness : add number to sum
+        Definitness : continue while N inputs taken
+    Input / Effectivness : initialize average = sum / N
+    Output : average
+
+

@@ -1,0 +1,18 @@
+Write a pseudocode to find the maximum of three numbers.
+    Start
+    input 3 numbers (a, b, c)
+    compare, if a > b & a > c, maximum number is a
+    Compare, if b > a & b > c, maximum number is b
+    compare, if c > a & c > b, maximum number is c
+    end
+
+Write a pseudocode to find the average of a list of N numbers.
+    Start
+    initialize sum = 0
+    start loop
+        Input a number
+        add number to sum
+        // continue while N inputs taken
+    initialize average = sum / N
+    print average
+    End
