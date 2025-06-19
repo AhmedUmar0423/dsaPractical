@@ -1,5 +1,7 @@
 package Practical5.Excercise2;
 
+import java.util.Scanner;
+
 public class LinkedList {
         private Link1 first;
 
@@ -86,27 +88,64 @@ public class LinkedList {
             }
         }
 
+        public void deleteAllLinks() {
+            while(first.next != null) {
+                Link1 deleted = deleteFirst();
+                if (deleted != null) {
+                    System.out.println("Deleted Book ID: " + deleted.bookId);
+                }
+            }
+        }
+
         public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
             LinkedList list = new LinkedList();
-            list.insertFirst(1, "Hello", 15);
-            list.insertAfter(1,2, "World", 10);
-            list.insertAfter(2, 3, "Welcome", 20);
+            System.out.print("Enter number of books to insert using insertFirst: ");
+            int n = sc.nextInt();
+            sc.nextLine(); // consume newline
 
-            System.out.println();
+            for (int i = 0; i < n; i++) {
+                System.out.println("\nBook " + (i + 1) + ":");
+                System.out.print("Enter Book ID: ");
+                int id = sc.nextInt();
+                sc.nextLine(); // consume newline
+                System.out.print("Enter Book Title: ");
+                String title = sc.nextLine();
+                System.out.print("Enter Number of Copies: ");
+                int copies = sc.nextInt();
+                sc.nextLine(); // consume newline
+                list.insertFirst(id, title, copies);
+            }
 
-            System.out.println("List after insertions:");
+            System.out.println("\nList after insertions:");
             list.displayList();
 
-            System.out.println();
+            System.out.print("\nEnter an ID to insert a new book after: ");
+            int afterId = sc.nextInt();
+            sc.nextLine(); // consume newline
+            System.out.print("Enter New Book ID: ");
+            int newId = sc.nextInt();
+            sc.nextLine(); // consume newline
+            System.out.print("Enter New Book Title: ");
+            String newTitle = sc.nextLine();
+            System.out.print("Enter Number of Copies: ");
+            int newCopies = sc.nextInt();
+            list.insertAfter(afterId, newId, newTitle, newCopies);
 
-            list.delete(2);
-            System.out.println("List after deleting ID 2:");
+            System.out.println("\nList after insertAfter:");
             list.displayList();
 
-            System.out.println();
+            System.out.print("\nEnter a Book ID to delete: ");
+            int delId = sc.nextInt();
+            list.delete(delId);
 
-            list.deleteFirst();
-            System.out.println("List after deleting first element:");
+            System.out.println("\nList after deletion:");
             list.displayList();
+
+            System.out.println("\nDeleting all books:");
+            list.deleteAllLinks();
+            System.out.println("Final list:");
+            list.displayList();
+
         }
     }
